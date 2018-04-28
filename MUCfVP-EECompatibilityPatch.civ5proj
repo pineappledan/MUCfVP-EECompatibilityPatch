@@ -31,19 +31,26 @@ EE v6</Description>
     <ModDependencies>
       <Association>
         <Type>Mod</Type>
-        <Name>Enlightement Era</Name>
-        <Id>ce8aa614-7ef7-4a45-a179-5329869e8d6d</Id>
-        <MinVersion>0</MinVersion>
-        <MaxVersion>999</MaxVersion>
-      </Association>
-      <Association>
-        <Type>Mod</Type>
         <Name>More Unique Components for VP</Name>
         <Id>259c3593-34dd-4fdd-bd7d-8ed67cc0797c</Id>
         <MinVersion>0</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Enlightement Era for VP</Name>
+        <Id>87b2deae-83cb-9b88-9017-79e741d3739c</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
     </ModDependencies>
+    <ModActions>
+      <Action xmlns="">
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>CompatibilityChanges.sql</FileName>
+      </Action>
+    </ModActions>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
