@@ -1,13 +1,30 @@
 --Armada
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_SHIP_OF_THE_LINE' WHERE UnitType = 'UNIT_SPAIN_ARMADA';
 UPDATE Units SET ObsoleteTech = 'TECH_INDUSTRIALIZATION' WHERE Type = 'UNIT_SPAIN_ARMADA';
+UPDATE Units SET PrereqTech = 'TECH_EE_EXPLORATION' WHERE Type = 'UNIT_SPAIN_ARMADA';
+UPDATE Units SET Cost = '350' WHERE Type = 'UNIT_SPAIN_ARMADA';
 
 --Black Tug
 UPDATE Units SET ObsoleteTech = 'TECH_RIFLING' WHERE Type = 'UNIT_MONGOLIA_BLACK_TUG';
 
 --Cacadores
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_GATLINGGUN' WHERE UnitType = 'UNIT_PORTUGUESE_CACADORES';
+UPDATE Units SET Class = 'UNITCLASS_EE_SKIRMISHER' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
 UPDATE Units SET ObsoleteTech = 'TECH_BALLISTICS' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
+UPDATE Units SET PrereqTech = 'TECH_EE_FORTIFICATION' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
+UPDATE Units SET Combat = '21' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
+UPDATE Units SET RangedCombat = '35' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
+UPDATE Units SET Cost = '375' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
+INSERT INTO	Unit_FreePromotions SELECT 'UNIT_PORTUGUESE_CACADORES', PromotionType FROM Unit_FreePromotions WHERE UnitType = 'UNIT_EE_SKIRMISHER';
+
+--Corsair
+UPDATE Units SET Class = 'UNITCLASS_EE_SHIP_OF_THE_LINE' WHERE Type = 'UNIT_MOROCCO_CORSAIR';
+UPDATE Units SET Combat = '35' WHERE Type = 'UNIT_MOROCCO_CORSAIR';
+UPDATE Units SET Cost = '400' WHERE Type = 'UNIT_MOROCCO_CORSAIR';
+INSERT INTO	Unit_FreePromotions SELECT 'UNIT_MOROCCO_CORSAIR', PromotionType FROM Unit_FreePromotions WHERE UnitType = 'UNIT_EE_SHIP_OF_THE_LINE';
+
+--Dromon
+UPDATE Units SET ObsoleteTech = 'TECH_EE_WARSHIPS' WHERE Type = 'UNIT_BYZANTIUM_DROMON';
 
 --Fusta
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_GALLEON' WHERE UnitType = 'UNIT_VENICE_FUSTA';
@@ -27,14 +44,32 @@ UPDATE Units SET ObsoleteTech = 'TECH_COMBUSTION' WHERE Type = 'UNIT_SWEDISH_HAK
 
 --Klepht
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_GATLINGGUN' WHERE UnitType = 'UNIT_GREECE_KLEPHT';
+UPDATE Units SET Class = 'UNITCLASS_EE_SKIRMISHER' WHERE Type = 'UNIT_GREECE_KLEPHT';
 UPDATE Units SET ObsoleteTech = 'TECH_BALLISTICS' WHERE Type = 'UNIT_GREECE_KLEPHT';
+UPDATE Units SET PrereqTech = 'TECH_EE_FORTIFICATION' WHERE Type = 'UNIT_GREECE_KLEPHT';
+UPDATE Units SET Combat = '19' WHERE Type = 'UNIT_GREECE_KLEPHT';
+UPDATE Units SET RangedCombat = '35' WHERE Type = 'UNIT_GREECE_KLEPHT';
+UPDATE Units SET Cost = '325' WHERE Type = 'UNIT_GREECE_KLEPHT';
+INSERT INTO	Unit_FreePromotions SELECT 'UNIT_GREECE_KLEPHT', PromotionType FROM Unit_FreePromotions WHERE UnitType = 'UNIT_EE_SKIRMISHER';
 
 --Langskib
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_CARRACK' WHERE UnitType = 'UNIT_DENMARK_LANGSKIB';
 UPDATE Units SET ObsoleteTech = 'TECH_NAVIGATION' WHERE Type = 'UNIT_DENMARK_LANGSKIB';
 
+--Licorne
+UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_FIELD_GUN' WHERE UnitType = 'UNIT_RUSSIA_LICORNE';
+UPDATE Units SET Class = 'UNITCLASS_EE_FIELD_GUN' WHERE Type = 'UNIT_RUSSIA_LICORNE';
+UPDATE Units SET ObsoleteTech = 'TECH_BALLISTICS' WHERE Type = 'UNIT_RUSSIA_LICORNE';
+UPDATE Units SET PrereqTech = 'TECH_EE_FLINTLOCK' WHERE Type = 'UNIT_RUSSIA_LICORNE';
+UPDATE Units SET Combat = '18' WHERE Type = 'UNIT_RUSSIA_LICORNE';
+UPDATE Units SET RangedCombat = '35' WHERE Type = 'UNIT_RUSSIA_LICORNE';
+UPDATE Units SET Cost = '375' WHERE Type = 'UNIT_RUSSIA_LICORNE';
+
 --Mandekalu Cavalry
 UPDATE Units SET ObsoleteTech = 'TECH_RIFLING' WHERE Type = 'UNIT_SONGHAI_MUSLIMCAVALRY';
+
+--Prau
+UPDATE Units SET ObsoleteTech = 'TECH_EE_EXPLORATION' WHERE Type = 'UNIT_INDONESIA_PRAU';
 
 --Prowler
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_SKIRMISHER' WHERE UnitType = 'UNIT_IROQUOIS_PROWLER';
@@ -44,87 +79,29 @@ UPDATE Units SET ObsoleteTech = 'TECH_DYNAMITE' WHERE Type = 'UNIT_IROQUOIS_PROW
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_UHLAN' WHERE UnitType = 'UNIT_PERSIA_QIZILBASH';
 UPDATE Units SET ObsoleteTech = 'TECH_COMBUSTION' WHERE Type = 'UNIT_PERSIA_QIZILBASH';
 
+--Shotel Swordsman
+UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_2HANDER' WHERE UnitType = 'UNIT_ETHIOPIA_SHOTELAI';
+UPDATE Units SET ObsoleteTech = 'TECH_EE_FLINTLOCK' WHERE Type = 'UNIT_ETHIOPIA_SHOTELAI';
+
 --Sofa
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_SKIRMISHER' WHERE UnitType = 'UNIT_SONGHAI_SOFA';
 UPDATE Units SET ObsoleteTech = 'TECH_DYNAMITE' WHERE Type = 'UNIT_SONGHAI_SOFA';
 
 --Turtle Ship
 UPDATE Units SET ObsoleteTech = 'TECH_EE_WARSHIPS' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
+UPDATE Units SET Class = 'UNITCLASS_EE_CARRACK' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
+UPDATE Units SET PrereqTech = 'TECH_EE_EXPLORATION' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
+UPDATE Units SET Combat = '38' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
+UPDATE Units SET Moves = '3' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
+UPDATE Units SET Cost = '250' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
 
---Prau
-UPDATE Units SET ObsoleteTech = 'TECH_EE_EXPLORATION' WHERE Type = 'UNIT_INDONESIA_PRAU';
+--Xiafan Guanjun
+UPDATE Units SET PrereqTech = 'TECH_NAVIGATION' WHERE Type = 'UNIT_CHINA_XIAFAN_GUANJUN';
 
---Dromon
-UPDATE Units SET ObsoleteTech = 'TECH_EE_WARSHIPS' WHERE Type = 'UNIT_BYZANTIUM_DROMON';
+--Seir Morb
+UPDATE Units SET Range = '3' WHERE Type = 'UNIT_SIAM_SEIR_MORB';
 
---Shotel Swordsman
-UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_2HANDER' WHERE UnitType = 'UNIT_ETHIOPIA_SHOTELAI';
-UPDATE Units SET ObsoleteTech = 'TECH_EE_FLINTLOCK' WHERE Type = 'UNIT_ETHIOPIA_SHOTELAI';
-
---Licorne
-UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_FIELD_GUN' WHERE UnitType = 'UNIT_RUSSIA_LICORNE';
-UPDATE Units SET ObsoleteTech = 'TECH_BALLISTICS' WHERE Type = 'UNIT_RUSSIA_LICORNE';
-
-Units:
-China (Xiafan Guanjun, (Frigate))
-Spoiler :
-Unlock at Navigation
-
-Morocco (Corsair -> Ship of the Line)
-Spoiler :
-set unitcombat to 35 (same as base SotL)
-Unlocks at Navigation
-400 production
-flagship promotion
-
-Spain (Armada (Corvette))
-Spoiler :
-Unlocks at Exploration
-350 production
-
-Greek (Klepht -> light infantry) --currently gatling gun
-Spoiler :
-Replace light infantry
-Unlocks at Fortification
-35RCS
-19 CS
-Light Skirmish promotion
-325 production
-
-Portugal (Cacadores -> light infantry) --currently gatling gun
-Spoiler :
-replaces light infantry
-unlocks at fortification
-Light Skirmish promotion
-375 production
-35 RCS
-21 CS
-
-Korea (Kobukseon >Carrack) -- currently caravel
-Spoiler :
-Replaces Carrack
-Unlocked at exploration
-3 movement (still has double move in coast)
-250 production
-38 CS
-
-Russia (Licorne > Field Gun)
-Spoiler :
-Field Gun replacement
-unlocked at Flintlock
-375 production
-35RCS
-18CS
-
-Siam (Seir Morb > Field Gun)
-Spoiler :
-Stays as VP field gun replacement (renamed Howitzer)
-3 Range
-
-
-
-
-
+/*
 Buildings:
 England (White Tower -> Tower of Buddhist Incense) -- currently hermitage
 Spoiler :
