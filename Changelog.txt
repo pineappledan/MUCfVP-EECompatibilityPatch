@@ -1,0 +1,14 @@
+-- Changelog
+-- Author: adan_eslavo
+-- DateCreated: 29/4/2018
+--------------------------------------------------------------
+v1:
+- fixed units:
+	- Cacadores ==> Light Infantry,
+    - Corsair ==> Ship of the Line,
+	- Klepht ==> Light Infantry,
+	- Licorne ==> EE Field Gun,
+	- Seir Morb ==> VP Field Gun/Howitzer
+	- Turtle Ship ==> Carrack,
+	- only small adjustements: Armada, Black Tug, Dromon, Fusta, Great Bombard, Great Galleas, Hakkapeliitta, Langskib, Mandekalu Cavalry, Prau, Prowler, Qizilbash, Shotel Swordsman, Sofa, Xiafan Guanjun,
+- fixed buildings:
