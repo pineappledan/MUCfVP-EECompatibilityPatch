@@ -8,6 +8,7 @@ UPDATE Units SET Cost = '350' WHERE Type = 'UNIT_SPAIN_ARMADA';
 UPDATE Units SET ObsoleteTech = 'TECH_RIFLING' WHERE Type = 'UNIT_MONGOLIA_BLACK_TUG';
 
 --Cacadores
+UPDATE Civilization_UnitClassOverrides SET UnitClassType = 'UNITCLASS_EE_SKIRMISHER' WHERE UnitType = 'UNIT_PORTUGUESE_CACADORES';
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_GATLINGGUN' WHERE UnitType = 'UNIT_PORTUGUESE_CACADORES';
 UPDATE Units SET Class = 'UNITCLASS_EE_SKIRMISHER' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
 UPDATE Units SET ObsoleteTech = 'TECH_BALLISTICS' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
@@ -24,6 +25,7 @@ UPDATE Language_en_US
 	WHERE Tag = 'TXT_KEY_UNIT_PORTUGUESE_CACADORES_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 --Corsair
+UPDATE Civilization_UnitClassOverrides SET UnitClassType = 'UNITCLASS_EE_SHIP_OF_THE_LINE' WHERE UnitType = 'UNIT_MOROCCO_CORSAIR';
 UPDATE Units SET Class = 'UNITCLASS_EE_SHIP_OF_THE_LINE' WHERE Type = 'UNIT_MOROCCO_CORSAIR';
 UPDATE Units SET Combat = '35' WHERE Type = 'UNIT_MOROCCO_CORSAIR';
 UPDATE Units SET Cost = '400' WHERE Type = 'UNIT_MOROCCO_CORSAIR';
@@ -55,6 +57,7 @@ UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_UHLAN' WHERE UnitTyp
 UPDATE Units SET ObsoleteTech = 'TECH_COMBUSTION' WHERE Type = 'UNIT_SWEDISH_HAKKAPELIITTA';
 
 --Klepht
+UPDATE Civilization_UnitClassOverrides SET UnitClassType = 'UNITCLASS_EE_SKIRMISHER' WHERE UnitType = 'UNIT_GREECE_KLEPHT';
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_GATLINGGUN' WHERE UnitType = 'UNIT_GREECE_KLEPHT';
 UPDATE Units SET Class = 'UNITCLASS_EE_SKIRMISHER' WHERE Type = 'UNIT_GREECE_KLEPHT';
 UPDATE Units SET ObsoleteTech = 'TECH_BALLISTICS' WHERE Type = 'UNIT_GREECE_KLEPHT';
@@ -76,6 +79,7 @@ UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_CARRACK' WHERE UnitT
 UPDATE Units SET ObsoleteTech = 'TECH_NAVIGATION' WHERE Type = 'UNIT_DENMARK_LANGSKIB';
 
 --Licorne
+UPDATE Civilization_UnitClassOverrides SET UnitClassType = 'UNITCLASS_EE_FIELD_GUN' WHERE UnitType = 'UNIT_RUSSIA_LICORNE';
 UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_FIELD_GUN' WHERE UnitType = 'UNIT_RUSSIA_LICORNE';
 UPDATE Units SET Class = 'UNITCLASS_EE_FIELD_GUN' WHERE Type = 'UNIT_RUSSIA_LICORNE';
 UPDATE Units SET ObsoleteTech = 'TECH_BALLISTICS' WHERE Type = 'UNIT_RUSSIA_LICORNE';
@@ -119,6 +123,7 @@ UPDATE Unit_ClassUpgrades SET UnitClassType = 'UNITCLASS_EE_SKIRMISHER' WHERE Un
 UPDATE Units SET ObsoleteTech = 'TECH_DYNAMITE' WHERE Type = 'UNIT_SONGHAI_SOFA';
 
 --Turtle Ship
+UPDATE Civilization_UnitClassOverrides SET UnitClassType = 'UNITCLASS_EE_CARRACK' WHERE UnitType = 'UNIT_KOREAN_TURTLE_SHIP';
 UPDATE Units SET ObsoleteTech = 'TECH_EE_WARSHIPS' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
 UPDATE Units SET Class = 'UNITCLASS_EE_CARRACK' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
 UPDATE Units SET PrereqTech = 'TECH_EE_EXPLORATION' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
@@ -132,9 +137,31 @@ UPDATE Language_en_US
 	SET Text = 'Korean replacement for the Carrack. High [ICON_STRENGTH] Combat Strength, and more effective against other melee naval units. Moves slowly in Deep Ocean'
 	WHERE Tag = 'TXT_KEY_CIV5_KOREA_TURTLESHIP_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
-
 --Xiafan Guanjun
 UPDATE Units SET PrereqTech = 'TECH_NAVIGATION' WHERE Type = 'UNIT_CHINA_XIAFAN_GUANJUN';
+
+
+
+--Waag
+UPDATE Civilization_BuildingClassOverrides SET BuildingClassType = 'BUILDINGCLASS_EE_WEIGH_HOUSE' WHERE BuildingType = 'BUILDING_NETHERLANDS_WAAG';
+UPDATE Buildings SET BuildingClass = 'BUILDINGCLASS_EE_WEIGH_HOUSE' WHERE Type = 'BUILDING_NETHERLANDS_WAAG';
+UPDATE Buildings SET PrereqTech = 'TECH_ECONOMICS' WHERE Type = 'BUILDING_NETHERLANDS_WAAG';
+UPDATE Buildings SET Cost = '750' WHERE Type = 'BUILDING_NETHERLANDS_WAAG';
+UPDATE Buildings SET SpecialistCount = '1' WHERE Type = 'BUILDING_NETHERLANDS_WAAG';
+UPDATE Building_YieldChanges SET Yield = '5' WHERE BuildingType = 'BUILDING_NETHERLANDS_WAAG' AND YieldType = 'YIELD_GOLD'; 
+INSERT INTO Building_YieldChangesPerPop VALUES ('BUILDING_NETHERLANDS_WAAG', 'YIELD_GOLD', 50);
+DELETE FROM Building_ResourceYieldChanges WHERE BuildingType = 'BUILDING_NETHERLANDS_WAAG';
+DELETE FROM Building_YieldFromPurchase WHERE BuildingType = 'BUILDING_NETHERLANDS_WAAG';
+DELETE FROM Building_BuildingClassLocalYieldChanges WHERE BuildingType = 'BUILDING_NETHERLANDS_WAAG' AND BuildingClassType = 'BUILDINGCLASS_MINT';
+DELETE FROM Building_BuildingClassLocalYieldChanges WHERE BuildingType = 'BUILDING_NETHERLANDS_WAAG' AND BuildingClassType = 'BUILDINGCLASS_CARAVANSARY';
+UPDATE Language_en_US 
+	SET Text = 'The Waag is the Netherlands'' unique replacement for the Weigh House. In addition to the normal bonuses of a Weigh House, the Waag comes earlier, and provides bonuses to Great Person Generation and defense for every luxury imported or exported in the Empire. Be sure to keep peaceful and lucrative relationships with your neighbors; a surprise war with a trading partner could suddenly weaken your city''s defenses!'
+	WHERE Tag = 'TXT_KEY_BUILDING_NETHERLANDS_WAAG_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
+UPDATE Language_en_US 
+	SET Text = 'Unique Dutch replacement for the Weigh House. Cheaper, and Available earlier.[NEWLINE][NEWLINE]+1 [ICON_GOLD] Gold  for every [ICON_CITIZEN] Citizen in the city. 1 Merchant specialist in this city. +3 [ICON_GOLD] Gold to Market in this City.[NEWLINE][NEWLINE]+2% [ICON_GREAT_PEOPLE] Great Person Generation and +1 [ICON_STRENGTH] Combat Strength in City for every Luxury Resource traded on Empire, up to a maximum of 10 traded resources.[NEWLINE]Reduces Poverty slightly.'
+	WHERE Tag = 'TXT_KEY_BUILDING_NETHERLANDS_WAAG_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
+
+
 
 /*
 Buildings:
@@ -156,19 +183,7 @@ Requires Castle in City (instead of Manor and Garden)
 2 :greatwork:Great works of Art slot, +3 :c5gold:Gold and +3 :c5culture:Culture if themed
 Comes with 1 free art: The Crown Jewels
 
-Dutch (Waag -> weigh house) -- currently bank
-Spoiler :
 
-UB: Waag - Weigh House
-Unlocked at Economics (1 tech earlier)
-Requires Market (instead of Bank)
-750:c5production: (down from 900)
-5 :c5gold:Gold (up from 3:c5gold:)
-+3:c5gold: to Market in city
-1:c5citizen: Merchant Specialists Slot
-+2% :c5greatperson: GPP and 2 :c5strength: CP in the city for every imported/exported luxury resource from other empires
-1:c5gold: Gold for every 2:c5citizen:pop (up from 1 for 4 pop)
--10%:c5unhappy: poverty in city
 
 Austrian (Schutzenstand -> gunsmith) -- currently arsenal
 Spoiler :
@@ -220,15 +235,6 @@ WHERE Tag = 'TXT_KEY_BUILDING_ENGLAND_WHITE_TOWER_HELP' AND EXISTS (SELECT * FRO
 UPDATE Language_en_US 
 SET Text = 'Unique English replacement for the Tower of Buddhist Incense. Receive your choice of a free great person, and 2 culture for every castle in the empire. The White Tower reduces the stealing rate of enemy spies on empire, and gives Happiness for every enemy spy killed. Your citizens will love you if you can keep a tight lid on English secrets, so station spies in your cities to take advantage of this wonder.'
 WHERE Tag = 'TXT_KEY_BUILDING_ENGLAND_WHITE_TOWER_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
-
---Waag
-UPDATE Language_en_US 
-SET Text = 'The Waag is the Netherlands'' unique replacement for the Weigh House. In addition to the normal bonuses of a Weigh House, the Waag comes earlier, and provides bonuses to Great Person Generation and defense for every luxury imported or exported in the Empire. Be sure to keep peaceful and lucrative relationships with your neighbors; a surprise war with a trading partner could suddenly weaken your city''s defenses!'
-WHERE Tag = 'TXT_KEY_BUILDING_NETHERLANDS_WAAG_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
-
-UPDATE Language_en_US 
-SET Text = 'Unique Dutch replacement for the Weigh House. Cheaper, and Available earlier.[NEWLINE][NEWLINE]+1 [ICON_GOLD] Gold  for every [ICON_CITIZEN] Citizen in the city. 1 Merchant specialist in this city. +3 [ICON_GOLD] Gold to Market in this City.[NEWLINE][NEWLINE]+2% [ICON_GREAT_PEOPLE] Great Person Generation and +1 [ICON_STRENGTH] Combat Strength in City for every Luxury Resource traded on Empire, up to a maximum of 10 traded resources.[NEWLINE]Reduces Poverty slightly.'
-WHERE Tag = 'TXT_KEY_BUILDING_NETHERLANDS_WAAG_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 --Schutzenstand
 UPDATE Language_en_US 

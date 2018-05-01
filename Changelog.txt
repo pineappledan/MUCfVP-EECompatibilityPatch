@@ -8,7 +8,7 @@ v1:
     - Corsair ==> Ship of the Line,
 	- Klepht ==> Light Infantry,
 	- Licorne ==> EE Field Gun,
-	- Seir Morb ==> VP Field Gun/Howitzer
 	- Turtle Ship ==> Carrack,
-	- only small adjustements: Armada, Black Tug, Dromon, Fusta, Great Bombard, Great Galleas, Hakkapeliitta, Langskib, Mandekalu Cavalry, Prau, Prowler, Qizilbash, Shotel Swordsman, Sofa, Xiafan Guanjun,
+	- only small adjustements: Armada, Black Tug, Dromon, Fusta, Great Bombard, Great Galleas, Hakkapeliitta, Langskib, Mandekalu Cavalry, Prau, Prowler, Qizilbash, Seir Morb, Shotel Swordsman, Sofa, Xiafan Guanjun,
 - fixed buildings:
+    - Waag ==> Weigh House.
