@@ -11,4 +11,5 @@ v1:
 	- Turtle Ship ==> Carrack,
 	- only small adjustements: Armada, Black Tug, Dromon, Fusta, Great Bombard, Great Galleas, Hakkapeliitta, Langskib, Mandekalu Cavalry, Prau, Prowler, Qizilbash, Seir Morb, Shotel Swordsman, Sofa, Xiafan Guanjun,
 - fixed buildings:
-    - Waag ==> Weigh House.
+    - Waag ==> Weigh House,
+	- White Tower ==> Tower of Buddhist Incense.
