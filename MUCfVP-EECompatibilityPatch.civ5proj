@@ -6,7 +6,7 @@
     <Name>MUCfVP-EE Compatibility Patch</Name>
     <Guid>c4b66c8f-961c-44ae-af33-e66245a50e3a</Guid>
     <ModVersion>1</ModVersion>
-    <Stability>Alpha</Stability>
+    <Stability>Stable</Stability>
     <Teaser>Compatibility Patch for MUCfVP and EE mods.
 MUCfVP v31
 EE v6</Teaser>
