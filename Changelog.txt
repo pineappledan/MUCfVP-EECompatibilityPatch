@@ -2,6 +2,10 @@
 -- Author: adan_eslavo
 -- DateCreated: 29/4/2018
 --------------------------------------------------------------
+v2:
+- fixed unit:
+	- Carolean ==> Line Infantry (brought back EE values).
+
 v1:
 - fixed units:
 	- Cacadores ==> Light Infantry,
