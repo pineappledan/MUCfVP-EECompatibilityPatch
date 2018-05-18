@@ -19,7 +19,7 @@ UPDATE Units SET RangedCombat = '35' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
 UPDATE Units SET Cost = '375' WHERE Type = 'UNIT_PORTUGUESE_CACADORES';
 INSERT INTO	Unit_FreePromotions SELECT 'UNIT_PORTUGUESE_CACADORES', PromotionType FROM Unit_FreePromotions WHERE UnitType = 'UNIT_EE_SKIRMISHER';
 UPDATE Language_en_US 
-	SET Text = 'Ranged unit of the Enlightenment Era. Only Portugal may build it. Whenever it levels up, it gains a random promotion from the Trailblazer or Survivalism lines.'
+	SET Text = 'Ranged unit of the Enlightenment Era. Only Portugal may build it. Whenever it levels up, it gains a random Promotion from the Trailblazer or Survivalism lines. Starts with [COLOR_POSITIVE_TEXT]Covering Fire I[ENDCOLOR].'
 	WHERE Tag = 'TXT_KEY_UNIT_PORTUGUESE_CACADORES_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
 	SET Text = 'The Cacador is the unique Portuguese replacement for the Light Infantry. It gains recon promotions by leveling up, allowing it to excel in hostile terrain.'
@@ -47,7 +47,7 @@ UPDATE Language_en_US
 	SET Text = 'The Corsair is the unique Moroccan replacement for the Ship of the Line. It specializes in raiding and pillaging maritime trade routes, earning Food and Production for each enemy unit killed and trade route plundered. The unit can enter other Civilization''s borders, even without an open borders agreement, which can be exploited to disrupt better protected trade routes.'
 	WHERE Tag = 'TXT_KEY_UNIT_MOROCCO_CORSAIR_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
-	SET Text = 'Naval unit that specializes in piracy and disrupting maritime trade. Available earlier than the Ship of the Line. Only Morocco can build it. It gains [ICON_FOOD] Food and [ICON_PRODUCTION] Production from killing units, pillaging resources, and plundering trade routes.[NEWLINE][NEWLINE]Can enter rival territory.'
+	SET Text = 'Unique Naval Unit specializing in disrupting maritime trade. Only Morocco may build it. Is Available earlier than the Ship of the Line it replaces. Can enter Rival Territory and ignores Enemy Zone of Control. Gain [ICON_FOOD] Food and [ICON_PRODUCTION] Production Whenever a Corsair Kills a Units, Pillages a Resource, or Plunders a [ICON_INTERNATIONAL_TRADE] Trade Route.'
 	WHERE Tag = 'TXT_KEY_UNIT_MOROCCO_CORSAIR_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 -- Dromon
@@ -80,10 +80,10 @@ UPDATE Units SET RangedCombat = '35' WHERE Type = 'UNIT_GREECE_KLEPHT';
 UPDATE Units SET Cost = '325' WHERE Type = 'UNIT_GREECE_KLEPHT';
 INSERT INTO	Unit_FreePromotions SELECT 'UNIT_GREECE_KLEPHT', PromotionType FROM Unit_FreePromotions WHERE UnitType = 'UNIT_EE_SKIRMISHER';
 UPDATE Language_en_US 
-	SET Text = 'A quick and elusive guerilla fighter. The Klepht is not as powerful as the Light Infantry it replaces, but can move quickly through hills, even after attacking. This unit also gains gold and production for every city-state ally every time it attacks a unit.'
+	SET Text = 'The Klepht is not as powerful as the Light Infantry it replaces, but can move quickly through hills, even after attacking. This unit also gains gold and production for every city-state ally every time it attacks a unit.'
 	WHERE Tag = 'TXT_KEY_UNIT_GREECE_KLEPHT_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
-	SET Text = 'Unique Enlightenment Era Unit.  Only the Greeks may build it. This unit is slightly weaker than the Light Infantry, but can move quickly through hills and can move after attacking. Receives the [COLOR_POSITIVE_TEXT]Philhellenism[ENDCOLOR] Promotion for free.'
+	SET Text = 'A quick and elusive guerilla fighter. Only Greece may build it. slightly weaker than the Light Infantry it replaces. Moves quickly through Hills and can move after attacking. Receives the [COLOR_POSITIVE_TEXT]Philhellenism[ENDCOLOR] Promotion for free.'
 	WHERE Tag = 'TXT_KEY_UNIT_GREECE_KLEPHT_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 
@@ -101,7 +101,7 @@ UPDATE Units SET Combat = '18' WHERE Type = 'UNIT_RUSSIA_LICORNE';
 UPDATE Units SET RangedCombat = '35' WHERE Type = 'UNIT_RUSSIA_LICORNE';
 UPDATE Units SET Cost = '375' WHERE Type = 'UNIT_RUSSIA_LICORNE';
 UPDATE Language_en_US 
-	SET Text = 'Unique Enlightenment Era Siege Unit. Only the Russians may build it. This Unit has better mobility in enemy territory, can move after attacking, and is more effective against Unmounted Melee units.'
+	SET Text = 'Unique Enlightenment Era Siege Unit. Only Russia may build it. This Unit is available earlier, has better mobility in Enemy Territory, and can move after attacking. Very effective against enemy Melee and Gunpowder Units.'
 	WHERE Tag = 'TXT_KEY_UNIT_RUSSIA_LICORNE_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 -- Mandekalu Cavalry
@@ -125,7 +125,7 @@ UPDATE Units SET ObsoleteTech = 'TECH_EE_FLINTLOCK' WHERE Type = 'UNIT_ETHIOPIA_
 -- Seir Morb
 UPDATE Units SET Range = '3' WHERE Type = 'UNIT_SIAM_SEIR_MORB';
 UPDATE Language_en_US 
-	SET Text = 'Unique Industrial Era Unit.  Only the Siamese may build it. More powerful than the Howitzer it replaces and has a bonus against naval units instead of a penalty, but does not have the [COLOR_RED]Bonus vs Cities[ENDCOLOR] promotion. Deals more damage in a turn the less the unit has moved and receives [COLOR_POSITIVE_TEXT]Cover I[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Cover II[ENDCOLOR] promotions for free.'
+	SET Text = 'Industrial Era Unit specializing in coastal defense. Only the Siamese may build it. More powerful than the Howitzer it replaces and has a bonus against naval units instead of a penalty, but does not have the [COLOR_RED]Bonus vs Cities[ENDCOLOR] promotion. Deals more damage in a turn the less the unit has moved. Starts with the [COLOR_POSITIVE_TEXT]Cover I[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Cover II[ENDCOLOR] Promotions.'
 	WHERE Tag = 'TXT_KEY_UNIT_SIAM_SEIR_MORB_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
 	SET Text = 'A powerful coastal defense cannon, the Seir Morb is more powerful than the Howitzer it replaces, especially against naval targets, but deals less damage to cities. The Seir Morb receives a combat boost for every remaining movement point when attacking, so pick a good spot and keep it steady.  Location, Location, Location.'
@@ -146,9 +146,6 @@ UPDATE Units SET Cost = '250' WHERE Type = 'UNIT_KOREAN_TURTLE_SHIP';
 UPDATE Language_en_US 
 	SET Text = 'The Turtle Ship is an early incarnation of the Ironclad for tactical purposes, and is best used to defend coastlines. Thanks to its high Combat Strength, it can easily fight off enemy Caravels and even Frigates. Its main drawback is that, unlike the Carrack that it replaces, it cannot move easily through deep oceans.'
 	WHERE Tag = 'TXT_KEY_CIV5_KOREA_TURTLESHIP_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
-UPDATE Language_en_US 
-	SET Text = 'Korean replacement for the Carrack. High [ICON_STRENGTH] Combat Strength, and more effective against other melee naval units. Moves slowly in Deep Ocean'
-	WHERE Tag = 'TXT_KEY_CIV5_KOREA_TURTLESHIP_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 -- Xiafan Guanjun
 UPDATE Units SET PrereqTech = 'TECH_NAVIGATION' WHERE Type = 'UNIT_CHINA_XIAFAN_GUANJUN';
@@ -172,7 +169,7 @@ UPDATE Language_en_US
 	SET Text = 'The Grande Ecole is the French unique building, replacing the Academy. In addition to the normal bonuses of an Academy, The Grande Ecole increases production for every citizen in the City, and has a Scientist Specialist slot. Grande Ecoles can be built in cities with a Salon, so they do not block your cultural growth like a normal Academy. In addition, all Scientists generate more Production, and all Engineers generate more Science, making any city with a Grande Ecole a powerhouse of scientific and technical achievement.'
 	WHERE Tag = 'TXT_KEY_BUILDING_FRANCE_GRANDE_ECOLE_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
-	SET Text = 'Unique French replacement for the Public School.[NEWLINE][NEWLINE]+2 [ICON_RESEARCH] Science and +1 [ICON_PRODUCTION] Production for every 5 [ICON_CITIZEN] Citizens in the City. +2 [ICON_PRODUCTION] Production for Scientists and +2 [ICON_RESEARCH] Science for Engineers in this City. Reduces [ICON_HAPPINESS_4] Unhappiness generated by Illiteracy. Allows Archaeologists to be built in this city. +2 [ICON_RESEARCH] Science and +2 [ICON_PRODUCTION] Production at Computers.[NEWLINE][NEWLINE]Can be built in a city with a Salon.'
+	SET Text = '+2 [ICON_RESEARCH] Science and +1 [ICON_PRODUCTION] Production for every 5 [ICON_CITIZEN] Citizens in the City. +2 [ICON_PRODUCTION] Production for Scientists and +2 [ICON_RESEARCH] Science for Engineers in this City. Reduces [ICON_HAPPINESS_4] Illiteracy. +2 [ICON_RESEARCH] Science and +2 [ICON_PRODUCTION] Production at Computers.[NEWLINE][NEWLINE]Can be built in a city with a Salon.'
 	WHERE Tag = 'TXT_KEY_BUILDING_FRANCE_GRANDE_ECOLE_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 -- Sambadrome
@@ -191,7 +188,7 @@ UPDATE Language_en_US
 	SET Text = 'The Sambadrome is the unique Brazilian replacement for the Salon. In addition to the bonuses of a Salon, the Sambadrome also generates Golden Age Points and Tourism. The Sambadrome can be built in cities with an Academy, so they do not block your scientific growth like a normal Salon. Comes with a Musician specialist slot, and all Musicians in the city generate extra Gold and Golden Age Points.'
 	WHERE Tag = 'TXT_KEY_BUILDING_BRAZIL_SAMBADROME_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
-	SET Text = 'Unique Brazilian replacement for the Salon. +1 [ICON_CULTURE] Culture for every 6 [ICON_CITIZEN] Population in City.[NEWLINE][NEWLINE]Musicians in City produce +1 [ICON_GOLD] Gold and +2 [ICON_GOLDEN_AGE] Golden Age Points. +25% [ICON_GOLDEN_AGE] Golden Age Points during Golden Ages. +2 [ICON_TOURISM] Tourism at Radio.[NEWLINE][NEWLINE]Can be built in a city with an Academy'
+	SET Text = '+1 [ICON_CULTURE] Culture for every 6 [ICON_CITIZEN] Population in City.[NEWLINE][NEWLINE]Musicians in City produce +1 [ICON_GOLD] Gold and +2 [ICON_GOLDEN_AGE] Golden Age Points. +25% [ICON_GOLDEN_AGE] Golden Age Points during Golden Ages. +2 [ICON_TOURISM] Tourism at Radio.[NEWLINE][NEWLINE]Can be built in a city with an Academy'
 	WHERE Tag = 'TXT_KEY_BUILDING_BRAZIL_SAMBADROME_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 -- Schutzenstand
@@ -231,7 +228,7 @@ UPDATE Language_en_US
 	SET Text = 'The Waag is the Netherlands'' unique replacement for the Weigh House. In addition to the normal bonuses of a Weigh House, the Waag comes earlier, and provides bonuses to Great Person Generation and defense for every luxury imported or exported in the Empire. Be sure to keep peaceful and lucrative relationships with your neighbors; a surprise war with a trading partner could suddenly weaken your city''s defenses!'
 	WHERE Tag = 'TXT_KEY_BUILDING_NETHERLANDS_WAAG_STRATEGY' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
-	SET Text = 'Unique Dutch replacement for the Weigh House. Cheaper, and Available earlier.[NEWLINE][NEWLINE]+1 [ICON_GOLD] Gold  for every [ICON_CITIZEN] Citizen in the city. 1 Merchant specialist in this city. +3 [ICON_GOLD] Gold to Market in this City.[NEWLINE][NEWLINE]+2% [ICON_GREAT_PEOPLE] Great Person Generation and +1 [ICON_STRENGTH] Combat Strength in City for every Luxury Resource traded on Empire, up to a maximum of 10 traded resources.[NEWLINE]Reduces Poverty slightly.'
+	SET Text = 'Cheaper, and Available earlier than the Weigh House. +1 [ICON_GOLD] Gold  for every 2 [ICON_CITIZEN] Citizens in the city and Markets in this City gain +3 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+2% [ICON_GREAT_PEOPLE] Great Person Generation and +1 [ICON_STRENGTH] Combat Strength in City for every Luxury Resource traded on Empire, up to a maximum of 10 traded resources.[NEWLINE]Reduces Poverty slightly.'
 	WHERE Tag = 'TXT_KEY_BUILDING_NETHERLANDS_WAAG_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 
 -- White Tower
@@ -246,7 +243,7 @@ UPDATE Building_ThemingYieldBonus SET Yield = '3' WHERE BuildingType = 'BUILDING
 UPDATE Building_YieldChanges SET Yield = '3' WHERE BuildingType = 'BUILDING_ENGLAND_WHITE_TOWER' AND YieldType = 'YIELD_CULTURE'; 
 DELETE FROM Building_YieldChangesPerPop WHERE BuildingType = 'BUILDING_ENGLAND_WHITE_TOWER';
 UPDATE Language_en_US
-	SET Text = 'Unique replacement for the Tower of Buddhist Incense. Only England may build it. Receive your choice of a free [ICON_GREAT_PEOPLE] Great Person.[NEWLINE][NEWLINE]+3 [ICON_GOLD] Gold to Constabulary and +3 [ICON_FOOD] Food to Arsenal in City. +2 [ICON_CULTURE] Culture for all Castles on Empire, and -25% Spy stealing rate on Empire.[NEWLINE][NEWLINE]+1 [ICON_HAPPINESS_1] Happiness on Empire for every enemy spy killed on Empire.[NEWLINE][NEWLINE]Contains 2 slots for Great Works of Art/Artifact, and comes with a free Great Work of Art. +3 [ICON_GOLD] Gold and +3 [ICON_CULTURE] Culture when themed.[NEWLINE][NEWLINE]Requires Castle in City.[NEWLINE]The [ICON_PRODUCTION] Production Cost and [ICON_CITIZEN] Population Requirements increase based on the number of cities you own.'
+	SET Text = 'Receive your choice of a free [ICON_GREAT_PEOPLE] Great Person.[NEWLINE][NEWLINE]+3 [ICON_GOLD] Gold to Constabulary and +3 [ICON_FOOD] Food to Arsenal in City. +2 [ICON_CULTURE] Culture for all Castles on Empire, and -25% Spy stealing rate on Empire.[NEWLINE][NEWLINE]+1 [ICON_HAPPINESS_1] Happiness on Empire for every enemy spy killed on Empire.[NEWLINE][NEWLINE]Contains 2 slots for Great Works of Art/Artifact, and comes with a free Great Work of Art. +3 [ICON_GOLD] Gold and +3 [ICON_CULTURE] Culture when themed.[NEWLINE][NEWLINE]Requires Castle in City.[NEWLINE]The [ICON_PRODUCTION] Production Cost and [ICON_CITIZEN] Population Requirements increase based on the number of cities you own.'
 	WHERE Tag = 'TXT_KEY_BUILDING_ENGLAND_WHITE_TOWER_HELP' AND EXISTS (SELECT * FROM COMMUNITY WHERE Type='COMMUNITY_CORE_BALANCE_UNITS' AND Value= 1 );
 UPDATE Language_en_US 
 	SET Text = 'Unique English replacement for the Tower of Buddhist Incense. Receive your choice of a free great person, and 2 culture for every castle in the empire. The White Tower reduces the stealing rate of enemy spies on empire, and gives Happiness for every enemy spy killed. Your citizens will love you if you can keep a tight lid on English secrets, so station spies in your cities to take advantage of this wonder.'
